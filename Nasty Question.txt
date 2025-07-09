@@ -1,0 +1,2 @@
+Can I ask a nasty question? :)
+Why tables and columns in PostgreSQL are created in case sensitive fashion, with quote? Isn't that a complication?
