@@ -38,19 +38,6 @@
           "DisplayValue": "Supervisor"
         }
       ]
-    },
-    {
-      "Row": [
-        {
-          "SchemaColumnUId": "ae0e45ca-c495-4fe7-a39d-3ab7278e1617",
-          "Value": "b8caae6e-b08f-4307-9cc3-2ab9c494eac6"
-        },
-        {
-          "SchemaColumnUId": "3015559e-cbc6-406a-88af-07f7930be832",
-          "Value": "410006e1-ca4e-4502-a9ec-e54d922d2c00",
-          "DisplayValue": "Supervisor"
-        }
-      ]
     }
   ]
 }
