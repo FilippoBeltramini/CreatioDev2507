@@ -145,7 +145,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"labelPosition": "auto",
 					"control": "$PDS_UsrType_5dvkp3u",
 					"listActions": [],
-					"showValueAsLink": false,
+					"showValueAsLink": true,
 					"controlActions": [],
 					"visible": true,
 					"readonly": false,
@@ -159,7 +159,24 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
-				"name": "RealtyOfferType",
+				"name": "ControlAction_u1rvmcm",
+				"values": {
+					"code": "goToRecordList",
+					"type": "crt.ComboboxAction",
+					"icon": "combobox-go-to-source",
+					"caption": "ComboBox.OpenSection",
+					"clicked": {
+						"request": "crt.OpenLookupSourceRequest",
+						"params": {}
+					}
+				},
+				"parentName": "RealtyType",
+				"propertyName": "controlActions",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "ComboBox_5ikixit",
 				"values": {
 					"layoutConfig": {
 						"column": 2,
@@ -168,9 +185,9 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 						"rowSpan": 1
 					},
 					"type": "crt.ComboBox",
-					"label": "$Resources.Strings.PDS_UsrColumn5_5dnx0x7",
+					"label": "$Resources.Strings.PDS_UsrOfferType_8hkkfqm",
 					"labelPosition": "auto",
-					"control": "$PDS_UsrColumn5_5dnx0x7",
+					"control": "$PDS_UsrOfferType_8hkkfqm",
 					"listActions": [],
 					"showValueAsLink": true,
 					"controlActions": []
@@ -181,36 +198,36 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
-				"name": "addRecord_9a6j3op",
+				"name": "addRecord_in94huc",
 				"values": {
 					"code": "addRecord",
 					"type": "crt.ComboboxSearchTextAction",
 					"icon": "combobox-add-new",
-					"caption": "#ResourceString(addRecord_9a6j3op_caption)#",
+					"caption": "#ResourceString(addRecord_in94huc_caption)#",
 					"clicked": {
 						"request": "crt.CreateRecordFromLookupRequest",
 						"params": {}
 					}
 				},
-				"parentName": "RealtyOfferType",
+				"parentName": "ComboBox_5ikixit",
 				"propertyName": "listActions",
 				"index": 0
 			},
 			{
 				"operation": "insert",
-				"name": "Input_j0gkk3u",
+				"name": "Input_1uiux9b",
 				"values": {
-					"type": "crt.Input",
-					"label": "$Resources.Strings.PDS_UsrColumn6_aalixhi",
-					"labelPosition": "auto",
-					"control": "$PDS_UsrColumn6_aalixhi",
 					"layoutConfig": {
 						"column": 1,
 						"colSpan": 1,
 						"row": 2,
 						"rowSpan": 1
 					},
-					"multiline": false
+					"type": "crt.Input",
+					"multiline": false,
+					"label": "$Resources.Strings.PDS_UsrComment_0r76km4",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrComment_0r76km4"
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
@@ -218,7 +235,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
-				"name": "Manager",
+				"name": "ComboBox_ufvftbp",
 				"values": {
 					"layoutConfig": {
 						"column": 2,
@@ -227,20 +244,51 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 						"rowSpan": 1
 					},
 					"type": "crt.ComboBox",
-					"label": "$Resources.Strings.PDS_UsrColumn7_zky85gd",
+					"label": "$Resources.Strings.PDS_UsrManager_er3vwtr",
 					"labelPosition": "auto",
-					"control": "$PDS_UsrColumn7_zky85gd",
+					"control": "$PDS_UsrManager_er3vwtr",
 					"listActions": [],
-					"showValueAsLink": false,
-					"controlActions": [],
-					"visible": true,
-					"readonly": false,
-					"placeholder": "",
-					"tooltip": ""
+					"showValueAsLink": true,
+					"controlActions": []
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
 				"index": 3
+			},
+			{
+				"operation": "insert",
+				"name": "addRecord_0c0ws5h",
+				"values": {
+					"code": "addRecord",
+					"type": "crt.ComboboxSearchTextAction",
+					"icon": "combobox-add-new",
+					"caption": "#ResourceString(addRecord_0c0ws5h_caption)#",
+					"clicked": {
+						"request": "crt.CreateRecordFromLookupRequest",
+						"params": {}
+					}
+				},
+				"parentName": "ComboBox_ufvftbp",
+				"propertyName": "listActions",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "Number",
+				"values": {
+					"type": "crt.Input",
+					"label": "$Resources.Strings.PDS_UsrNumber_z6y4t9n",
+					"labelPosition": "auto",
+					"control": "$PDS_UsrNumber_z6y4t9n",
+					"multiline": false,
+					"visible": true,
+					"readonly": true,
+					"placeholder": "",
+					"tooltip": ""
+				},
+				"parentName": "GeneralInfoTab",
+				"propertyName": "items",
+				"index": 1
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -270,19 +318,24 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"path": "PDS.UsrType"
 						}
 					},
-					"PDS_UsrColumn5_5dnx0x7": {
+					"PDS_UsrOfferType_8hkkfqm": {
 						"modelConfig": {
-							"path": "PDS.UsrColumn5"
+							"path": "PDS.UsrOfferType"
 						}
 					},
-					"PDS_UsrColumn6_aalixhi": {
+					"PDS_UsrComment_0r76km4": {
 						"modelConfig": {
-							"path": "PDS.UsrColumn6"
+							"path": "PDS.UsrComment"
 						}
 					},
-					"PDS_UsrColumn7_zky85gd": {
+					"PDS_UsrManager_er3vwtr": {
 						"modelConfig": {
-							"path": "PDS.UsrColumn7"
+							"path": "PDS.UsrManager"
+						}
+					},
+					"PDS_UsrNumber_z6y4t9n": {
+						"modelConfig": {
+							"path": "PDS.UsrNumber"
 						}
 					}
 				}

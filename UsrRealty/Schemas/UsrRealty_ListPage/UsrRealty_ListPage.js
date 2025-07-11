@@ -44,9 +44,9 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"dataValueType": 10
 						},
 						{
-							"id": "ff98c655-71da-8ca7-c18a-388adc75b170",
-							"code": "PDS_UsrColumn5",
-							"caption": "#ResourceString(PDS_UsrColumn5)#",
+							"id": "11030a94-ed69-0011-e182-d4d416af9f28",
+							"code": "PDS_UsrOfferType",
+							"caption": "#ResourceString(PDS_UsrOfferType)#",
 							"dataValueType": 10
 						},
 						{
@@ -54,6 +54,12 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"code": "PDS_CreatedOn",
 							"caption": "#ResourceString(PDS_CreatedOn)#",
 							"dataValueType": 7
+						},
+						{
+							"id": "07cd587c-189a-cc18-0785-eef209f641b2",
+							"code": "PDS_UsrNumber",
+							"caption": "#ResourceString(PDS_UsrNumber)#",
+							"dataValueType": 27
 						}
 					]
 				}
@@ -100,14 +106,19 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"path": "PDS.UsrType"
 						}
 					},
-					"PDS_UsrColumn5": {
+					"PDS_UsrOfferType": {
 						"modelConfig": {
-							"path": "PDS.UsrColumn5"
+							"path": "PDS.UsrOfferType"
 						}
 					},
 					"PDS_CreatedOn": {
 						"modelConfig": {
 							"path": "PDS.CreatedOn"
+						}
+					},
+					"PDS_UsrNumber": {
+						"modelConfig": {
+							"path": "PDS.UsrNumber"
 						}
 					}
 				}
@@ -123,8 +134,8 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				"values": {
 					"default": [
 						{
-							"direction": "desc",
-							"columnName": "CreatedBy"
+							"direction": "asc",
+							"columnName": "UsrColumn5"
 						}
 					]
 				}
@@ -150,11 +161,14 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 						"UsrType": {
 							"path": "UsrType"
 						},
-						"UsrColumn5": {
-							"path": "UsrColumn5"
+						"UsrOfferType": {
+							"path": "UsrOfferType"
 						},
 						"CreatedOn": {
 							"path": "CreatedOn"
+						},
+						"UsrNumber": {
+							"path": "UsrNumber"
 						}
 					}
 				}
