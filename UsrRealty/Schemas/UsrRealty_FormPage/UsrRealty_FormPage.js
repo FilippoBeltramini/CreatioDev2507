@@ -74,6 +74,30 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
+				"name": "PushMeButton",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(PushMeButton_caption)#",
+					"color": "accent",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "left-icon",
+					"visible": true,
+					"clicked": {
+						"request": "usr.PushButtonRequest",
+						"params": {
+							"myParamName": "myParamValue"
+						}
+					},
+					"clickMode": "default",
+					"icon": "process-button-icon"
+				},
+				"parentName": "CardToggleContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
 				"name": "UsrName",
 				"values": {
 					"layoutConfig": {
@@ -145,7 +169,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"labelPosition": "auto",
 					"control": "$PDS_UsrType_5dvkp3u",
 					"listActions": [],
-					"showValueAsLink": true,
+					"showValueAsLink": false,
 					"controlActions": [],
 					"visible": true,
 					"readonly": false,
@@ -155,23 +179,6 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
-				"index": 0
-			},
-			{
-				"operation": "insert",
-				"name": "ControlAction_u1rvmcm",
-				"values": {
-					"code": "goToRecordList",
-					"type": "crt.ComboboxAction",
-					"icon": "combobox-go-to-source",
-					"caption": "ComboBox.OpenSection",
-					"clicked": {
-						"request": "crt.OpenLookupSourceRequest",
-						"params": {}
-					}
-				},
-				"parentName": "RealtyType",
-				"propertyName": "controlActions",
 				"index": 0
 			},
 			{
@@ -284,11 +291,17 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"visible": true,
 					"readonly": true,
 					"placeholder": "",
-					"tooltip": ""
+					"tooltip": "",
+					"layoutConfig": {
+						"column": 2,
+						"colSpan": 1,
+						"row": 3,
+						"rowSpan": 1
+					}
 				},
-				"parentName": "GeneralInfoTab",
+				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
-				"index": 1
+				"index": 4
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
@@ -376,7 +389,21 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				}
 			}
 		]/**SCHEMA_MODEL_CONFIG_DIFF*/,
-		handlers: /**SCHEMA_HANDLERS*/[]/**SCHEMA_HANDLERS*/,
+		handlers: /**SCHEMA_HANDLERS*/[
+			{
+				request: "usr.PushButtonRequest",
+				/* Implementation of the custom query handler. */
+				handler: async (request, next) => {
+					console.log("Button works...");
+					Terrasoft.showInformation("My button was pressed.");
+					var price = await request.$context.PDS_UsrPrice_1vp29hd;
+					console.log("Price = " + price);
+					request.$context.PDS_UsrArea_abvlyen = 4000; /* price * 0.2;*/
+					/* Call the next handler if it exists and return its result. */
+					return next?.handle(request);
+				}
+			}
+		]/**SCHEMA_HANDLERS*/,
 		converters: /**SCHEMA_CONVERTERS*/{}/**SCHEMA_CONVERTERS*/,
 		validators: /**SCHEMA_VALIDATORS*/{}/**SCHEMA_VALIDATORS*/
 	};
