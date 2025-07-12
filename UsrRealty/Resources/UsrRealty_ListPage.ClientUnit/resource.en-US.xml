@@ -3,6 +3,9 @@
 	<Group Type="String">
 		<Items>
 			<Item Name="Caption" Value="Realty list page" />
+			<Item Name="LocalizableStrings.QuickFilter_9oxtb96_caption.Value" Value="Quick filter" />
+			<Item Name="LocalizableStrings.QuickFilter_m77rbwc_caption.Value" Value="Quick filter" />
+			<Item Name="LocalizableStrings.QuickFilter_m77rbwc_config_caption.Value" Value="Offer Type" />
 		</Items>
 	</Group>
 </Resources>
