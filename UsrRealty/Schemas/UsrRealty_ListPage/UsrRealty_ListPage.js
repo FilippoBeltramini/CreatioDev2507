@@ -61,7 +61,21 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"caption": "#ResourceString(PDS_UsrNumber)#",
 							"dataValueType": 27
 						}
-					]
+					],
+					"features": {
+						"rows": {
+							"selection": {
+								"enable": true,
+								"multiple": true
+							}
+						},
+						"editable": {
+							"enable": false,
+							"itemsCreation": false,
+							"floatingEditPanel": false
+						}
+					},
+					"visible": true
 				}
 			},
 			{
@@ -227,8 +241,8 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				"values": {
 					"default": [
 						{
-							"direction": "asc",
-							"columnName": "UsrColumn5"
+							"direction": "desc",
+							"columnName": "UsrPrice"
 						}
 					]
 				}
