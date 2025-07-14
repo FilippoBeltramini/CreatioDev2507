@@ -16,6 +16,7 @@
 			<Item Name="LocalizableStrings.GridDetailSearchFilter_92mu0s3_placeholder.Value" Value="Search" />
 			<Item Name="LocalizableStrings.GridDetailSettingsBtn_sxsgkih_caption.Value" Value="Actions" />
 			<Item Name="LocalizableStrings.MenuItem_8287c8q_caption.Value" Value="Menu item" />
+			<Item Name="LocalizableStrings.MultiSelect_eoz4t4s_label.Value" Value="Categories" />
 			<Item Name="LocalizableStrings.NumberInput_pc9wn1d_label.Value" Value="Number" />
 			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price cannot be less than 50 USD" />
 			<Item Name="LocalizableStrings.PushMeButton_caption.Value" Value="Push me!" />
