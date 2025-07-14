@@ -83,7 +83,6 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				"name": "Dashboards",
 				"values": {
 					"_designOptions": {
-						"entitySchemaName": "UsrRealty",
 						"dependencies": [
 							{
 								"attributePath": "Id",

@@ -8,6 +8,7 @@
 			<Item Name="Columns.UsrCommission.Caption" Value="Commision, USD" />
 			<Item Name="Columns.UsrManager.Caption" Value="Manager" />
 			<Item Name="Columns.UsrName.Caption" Value="Name" />
+			<Item Name="Columns.UsrName.Description" Value="Name" />
 			<Item Name="Columns.UsrNumber.Caption" Value="Number" />
 			<Item Name="Columns.UsrOfferType.Caption" Value="Offer Type" />
 			<Item Name="Columns.UsrPrice.Caption" Value="Price, USD" />
