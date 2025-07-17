@@ -1014,7 +1014,7 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/["@creatio-devkit/common"]/**SCHEMA
 						realtyOfferTypeId: offerTypeId
 					};
 					const response = await httpClientService.post(endpoint, params);
-					
+					 
 					console.log("response max price = " + response.body.GetMaxPriceByTypeIdResult);
 					
 					/* Call the next handler if it exists and return its result. */
